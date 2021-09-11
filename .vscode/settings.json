@@ -1,0 +1,47 @@
+{
+    "[java]": {
+        "editor.tabSize": 4,
+        "editor.autoIndent": "full",
+        "editor.wrappingIndent": "deepIndent",
+        "editor.defaultFormatter": "redhat.java",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+            "source.fixAll": true
+        },
+        "editor.rulers": [
+            120
+        ]
+    },
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.format.enabled": true,
+    "java.format.onType.enabled": true,
+    "java.saveActions.organizeImports": true,
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.format.settings.url": "${workspaceFolder}/config/formatter/TXM Java Formatter.xml",
+    "java.debug.settings.maxStringLength": 120,
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.autoIndent": "full"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml",
+        "editor.autoIndent": "full",
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": false
+        }
+    },
+    "files.associations": {
+        "*.pom": "xml"
+    }
+}

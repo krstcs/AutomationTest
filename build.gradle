@@ -1,0 +1,68 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.gradle.api.tasks.testing.TestResult
+import org.gradle.api.tasks.testing.TestResult.ResultType
+
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'com.intuit.karate:karate-junit5:1.1.0'
+}
+
+sourceSets {
+    test {
+        resources {
+            srcDir file("src/main/resources")
+            srcDir file("config/logback")
+            srcDir file("src/test/resources")
+            srcDir file("src/test/java")
+            exclude "**/*.java"
+        }
+    }
+}
+
+tasks.named('test') {
+    testLogging {
+        events  TestLogEvent.FAILED,
+                TestLogEvent.PASSED,
+                TestLogEvent.SKIPPED,
+                TestLogEvent.STANDARD_ERROR,
+                TestLogEvent.STANDARD_OUT
+        exceptionFormat TestExceptionFormat.FULL
+        showCauses true
+        showExceptions true
+        showStackTraces true
+        outputs.upToDateWhen {false}
+        showStandardStreams true
+    }
+    
+    useJUnitPlatform()
+    systemProperty "karate.options", System.properties.getProperty("karate.options")
+    systemProperty "karate.env", System.properties.getProperty("karate.env")
+    systemProperty "logback.debug", System.properties.getProperty("logback.debug")
+}
+
+tasks.register("karateExecute", JavaExec) {
+    classpath = sourceSets.test.runtimeClasspath
+    main = "com.intuit.karate.cli.Main"
+}
+
+tasks.register("deleteTargetFolder", Delete) {
+    delete("$projectDir/target")
+}
+
+tasks.clean.dependsOn("deleteTargetFolder")
+
+//this is required in order to get around a known issue with gradle 7.2
+rootProject.tasks.named("processTestResources") {
+    duplicatesStrategy = 'include'
+}

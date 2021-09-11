@@ -1,0 +1,26 @@
+{
+    "invalid": [{
+            "email": "badusername1",
+            "password": ""
+        },
+        {
+            "email": "badusername1@email.com",
+            "password": ""
+        },
+        {
+            "email": "johnsmith1111@test.com",
+            "password": "bad-password"
+        }
+    ],
+    "valid": {
+        "email": "johnsmith@test.com",
+        "password": "jsm1thp@ssw0rd",
+        "firstname": "John",
+        "lastname": "Smith",
+        "addressLine1": "123 Anyplace",
+        "city": "Austin",
+        "state": "Texas",
+        "zip": "77777",
+        "mobilephone": "5125551111"
+    }
+}
