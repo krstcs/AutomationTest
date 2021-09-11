@@ -1,11 +1,19 @@
 {
-    "invalid": {
-        "email": "badusername1",
-        "password": "",
-        "error": "Invalid email address."
-    },
+    "invalid": [{
+            "email": "badusername1",
+            "password": ""
+        },
+        {
+            "email": "badusername1@email.com",
+            "password": ""
+        },
+        {
+            "email": "johnsmith1111@test.com",
+            "password": "bad-password"
+        }
+    ],
     "valid": {
-        "email": "johnsmith1111@test.com",
+        "email": "johnsmith@test.com",
         "password": "jsm1thp@ssw0rd",
         "firstname": "John",
         "lastname": "Smith",
