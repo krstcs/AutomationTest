@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "karate",
+            "name": "Karate (debug): Gradle",
+            "request": "launch",
+            "feature": "${command:karateRunner.getDebugFile}",
+            "karateOptions": "",
+            "karateCli": "./gradlew.bat compileTestJava -b \"${command:karateRunner.getDebugBuildFile}\" karateExecute --args=\"-d\""
+        },
+        {
+            "type": "karate",
+            "name": "Karate (debug - local): Gradle",
+            "request": "launch",
+            "feature": "${command:karateRunner.getDebugFile}",
+            "karateOptions": "",
+            "karateCli": "./gradlew.bat compileTestJava -b \"${command:karateRunner.getDebugBuildFile}\" karateExecute -Plocal --args=\"-d\""
+        }
+    ]
+}

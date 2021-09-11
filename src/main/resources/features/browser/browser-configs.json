@@ -1,0 +1,48 @@
+{
+    "chromeapi": {
+        "type": "chrome",
+        "showDriverLog": true,
+        "addOptions": [
+            "--window-size=1600, 900"
+        ]
+    },
+    "chrome": {
+        "type": "chromedriver",
+        "showDriverLog": true,
+        "webDriverSession": {
+            "desiredCapabilities": {
+                "goog:chromeOptions": {}
+            }
+        }
+    },
+    "firefox": {
+        "type": "geckodriver",
+        "showDriverLog": true,
+        "webDriverSession": {
+            "desiredCapabilities": {
+                "moz:firefoxOptions": {}
+            }
+        }
+    },
+    "edge": {
+        "type": "msedgedriver",
+        "showDriverLog": true,
+        "webDriverSession": {
+            "desiredCapabilities": {}
+        }
+    },
+    "edgelegacy": {
+        "type": "mswebdriver",
+        "showDriverLog": true,
+        "webDriverSession": {
+            "desiredCapabilities": {}
+        }
+    },
+    "ie": {
+        "type": "iedriver",
+        "showDriverLog": true,
+        "webDriverSession": {
+            "desiredCapabilities": {}
+        }
+    }
+}

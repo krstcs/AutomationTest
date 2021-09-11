@@ -18,6 +18,7 @@ dependencies {
 sourceSets {
     test {
         resources {
+            srcDir file("src/main/resources")
             srcDir file("config/logback")
             srcDir file("src/test/resources")
             srcDir file("src/test/java")
@@ -48,8 +49,6 @@ tasks.named('test') {
 }
 
 tasks.register("karateExecute", JavaExec) {
-    dependsOn("copyDrivers")
-    dependsOn("copyTafkResources")
     classpath = sourceSets.test.runtimeClasspath
     main = "com.intuit.karate.cli.Main"
 }
@@ -59,3 +58,8 @@ tasks.register("deleteTargetFolder", Delete) {
 }
 
 tasks.clean.dependsOn("deleteTargetFolder")
+
+//this is required in order to get around a known issue with gradle 7.2
+rootProject.tasks.named("processTestResources") {
+    duplicatesStrategy = 'include'
+}

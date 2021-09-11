@@ -1,0 +1,27 @@
+{
+    "homepage": {
+        "signinlink": "{^a}Sign in",
+        "signoutlink": "{^a}Sign out",
+        "myaccountlink_ref": "{span}"
+    },
+    "signinpage": {
+        "email_create_textbox": "//input[@id='email_create']",
+        "create_account_button": "//button[@id='SubmitCreate']",
+        "email_textbox": "//input[@id='email']",
+        "password_textbox": "//input[@id='passwd']",
+        "signin_button": "//button[@id='SubmitLogin']",
+        "error_message": "//div[@class='alert alert-danger']"
+    },
+    "registrationpage": {
+        "personalinfo_firstname_textbox": "//input[@id='customer_firstname']",
+        "personalinfo_lastname_textbox": "//input[@id='customer_lastname']",
+        "email_textbox": "//input[@id='email']",
+        "password_textbox": "//input[@id='passwd']",
+        "address_line1_textbox": "//input[@id='address1']",
+        "city_textbox": "//input[@id='city']",
+        "state_dropdown": "//select[@id='id_state']",
+        "zip_textbox": "//input[@id='postcode']",
+        "mobilephone_textbox": "//input[@id='phone_mobile']",
+        "register_button": "//button[@id='submitAccount']"
+    }
+}
